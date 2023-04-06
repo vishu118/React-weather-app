@@ -1,4 +1,4 @@
-const API_KEY = "f108f4adb253faa49fe23d5f3cbdf504";
+const API_KEY = "1d05dbe198bc70cdbd4d06d7f8cb4e11";
 
 const makeIconURL = (iconId) =>
   `https://openweathermap.org/img/wn/${iconId}@2x.png`;
@@ -9,6 +9,8 @@ const getFormattedWeatherData = async (city, units = "metric") => {
   const data = await fetch(URL)
     .then((res) => res.json())
     .then((data) => data);
+
+    console.log(data)
 
   const {
     weather,

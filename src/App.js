@@ -1,13 +1,28 @@
 import hotBg from "./Assets/hot.jpg"
 import coldBg from "./Assets/cold.jpg";
+import Descreption from "./Components/Descreption";
+import { useEffect } from "react";
+import { getFormattedWeatherData } from "./Components/WeatherService";
 
 
 
 function App() {
-  // const [city, setCity] = useState("Paris");
-  // const [weather, setWeather] = useState(null);
-  // const [units, setUnits] = useState("metric");
-  // const [bg, setBg] = useState(hotBg);
+
+  useEffect(()=>{
+
+    const fetchData = async ()=>{
+      
+      const data = await getFormattedWeatherData('ranchi')
+      console.log(data)
+    }
+    fetchData()
+  },[])
+
+
+  const [city, setCity] = useState("Ranchi");
+  const [weather, setWeather] = useState(null);
+  const [units, setUnits] = useState("metric");
+  const [bg, setBg] = useState(hotBg);
 
   // useEffect(() => {
   //   const fetchWeatherData = async () => {
@@ -64,7 +79,7 @@ function App() {
             </div>
 
             {/* bottom description */}
-           
+           <Descreption/>
           </div>
       </div>
     </div>
