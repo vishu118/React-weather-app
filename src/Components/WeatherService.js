@@ -10,7 +10,6 @@ const getFormattedWeatherData = async (city, units = "metric") => {
     .then((res) => res.json())
     .then((data) => data);
 
-    console.log(data)
 
   const {
     weather,
