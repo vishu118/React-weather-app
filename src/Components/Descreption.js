@@ -58,15 +58,17 @@ const Descreption = ({weather,units}) => {
 
 
     
-    <div className="section section_descreption">
+    <div className="section section_description">
       {
         cards.map(({id,icon,title,data,unit})=>{
 
      return(
         <div className="card" key = {id}>
-            <div className="descreption_card-icon">
-               {icon}
+            <div className="description_card-icon">
+              <div className='icons'>
+              {icon}
                <small>{title}</small>
+              </div>
                <h2>{`${data} ${unit}`}</h2>
             </div>
         </div>

@@ -1,4 +1,4 @@
-.section_descreption {
+.section_description {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
@@ -15,7 +15,7 @@
     border-radius: 0.4rem;
 }
 
-.descreption__card-icon {
+.description__card-icon {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -23,6 +23,12 @@
     justify-content: center;
     gap: 5px;
     margin-bottom: 12px;
+}
+
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
