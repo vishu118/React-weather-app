@@ -12,7 +12,7 @@ function App() {
 
     const fetchData = async ()=>{
       
-      const data = await getFormattedWeatherData('ranchi')
+      const data = await getFormattedWeatherData('ranchi', units)
       setweather(data)
     }
     fetchData()
@@ -20,41 +20,9 @@ function App() {
   
 
   const [weather ,setweather] = useState(null)
+   const [units, setUnits] = useState("imperial");
 
-  // const [city, setCity] = useState("Paris");
-  // const [weather, setWeather] = useState(null);
-  // const [units, setUnits] = useState("metric");
-  // const [bg, setBg] = useState(hotBg);
-
-  // useEffect(() => {
-  //   const fetchWeatherData = async () => {
-  //     const data = await getFormattedWeatherData(city, units);
-  //     setWeather(data);
-
-  //     // dynamic bg
-  //     const threshold = units === "metric" ? 20 : 60;
-  //     if (data.temp <= threshold) setBg(coldBg);
-  //     else setBg(hotBg);
-  //   };
-
-  //   fetchWeatherData();
-  // }, [units, city]);
-
-  // const handleUnitsClick = (e) => {
-  //   const button = e.currentTarget;
-  //   const currentUnit = button.innerText.slice(1);
-
-  //   const isCelsius = currentUnit === "C";
-  //   button.innerText = isCelsius ? "°F" : "°C";
-  //   setUnits(isCelsius ? "metric" : "imperial");
-  // };
-
-  // const enterKeyPressed = (e) => {
-  //   if (e.keyCode === 13) {
-  //     setCity(e.currentTarget.value);
-  //     e.currentTarget.blur();
-  //   }
-  // };
+  
 
   return (
     <div className="app" style={{ backgroundImage: `url(${coldBg})` }}>
@@ -73,17 +41,20 @@ function App() {
 
             <div className="section section__temperature">
               <div className="icon">
-                <h3>City</h3>
-                <img src="" alt="weatherIcon" />
-                <h3>cloudy</h3>
+                <h3>{weather.name}</h3>
+                <img src = {weather.iconURL} alt="weatherIcon" />
+                <h3>{weather.description}</h3>
               </div>
               <div className="temperature">
-                <h1>34°C</h1>
+                <h1>{weather.temp.toFixed()}
+                { 
+                  units === "metric" ? '℃' : '℉'
+                }</h1>
               </div>
             </div>
 
             {/* bottom description */}
-           <Descreption/>
+           <Descreption weather = {weather} units = {units}/>
           </div>
       )}
       </div>
