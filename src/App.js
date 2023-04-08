@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Description from "./Components/Description";
 import hotbg from "./Assets/hot.jpg";
 import coldbg from "./Assets/cold.jpg";
 import "./index.css";
+import {getData} from "./Components/Data"
 
 const App = () => {
+
+
+  useEffect(()=>{
+   const data =  getData('ranchi')
+  },[])  
+
+
+
   return (
     <div className="app" style={{ backgroundImage:`url(${hotbg})`  }}>
       <div className="overlay">
@@ -25,6 +35,7 @@ const App = () => {
           </div>
 
           {/* bottom description */}
+          <Description/>
         </div>
       </div>
     </div>
