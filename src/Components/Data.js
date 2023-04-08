@@ -17,14 +17,18 @@ const getData = async (city, units = "metric") => {
     wind: { speed },
     sys: { country },
     name,
+
+
   } = data;
+
+  const temperature = temp.toFixed()
 
   const { description, icon } = weather[0];
 
   return {
     description,
     iconURL : getIconURL(icon) ,
-    temp,
+    temperature,
     feels_like,
     temp_max,
     temp_min,
