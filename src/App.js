@@ -39,7 +39,10 @@ const App = () => {
         {weather && (
           <div className="container">
             <div className="section section__inputs">
-              <input type="text" name="city" placeholder="Enter City..." />
+             <div className="input">
+             <input type="text" name="city" placeholder="Enter City..." />
+             <button className="">Search</button>
+             </div>
               <button onClick={(e)=>handleUnitChange(e)}>°F</button>
             </div>
 

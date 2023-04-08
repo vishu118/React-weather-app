@@ -51,7 +51,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: var(--section-overlay);
 }
 
-.section__inputs>input {
+input {
   border: 0.8px solid white;
   border-radius: 0.4rem;
   background-color: transparent;
@@ -65,7 +65,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
 }
 
-.section__inputs>button {
+button {
   padding: 10px 50px;
   border: none;
   border-radius: 00.4rem;
@@ -74,7 +74,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: white;
 }
 
-.section__inputs>button:hover {
+button:hover {
   cursor: pointer;
   background-color: lightgray;
 }
@@ -94,4 +94,9 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 .temperature>h1 {
   font-size: 60px;
+}
+
+.input{
+  display: contents;
+  
 }
