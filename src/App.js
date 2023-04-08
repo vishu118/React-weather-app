@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from "react";
 import Description from "./Components/Description";
 import hotbg from "./Assets/hot.jpg";
-import coldbg from "./Assets/cold.jpg";
+// import coldbg from "./Assets/cold.jpg";
 import "./index.css";
 import { getData } from "./Components/Data";
 
 const App = () => {
+  const [city,setCity] = useState('ranchi')
   const [weather, setWeather] = useState(null);
   const [units, setunits] = useState("metric");
+//   const [bg, setBg] = useState(hotbg);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getData("ranchi", units);
+      const data = await getData(city, units);
       setWeather(data);
+
+    //   const tempForbg = units === "metric" ? 20 : 40
+    //   if( data.temp <= tempForbg)
+    //   setBg(coldbg)
+    //   else setBg(hotbg)
     };
 
     fetchData();
-  }, [units]);
+  }, [units,city]);
 
 
  const handleUnitChange = (e)=>{
@@ -29,6 +36,10 @@ const App = () => {
 
 
 
+    
+}
+const handleChange = (e)=>{
+    setCity(e.target.value) 
 }
 
   
@@ -39,10 +50,10 @@ const App = () => {
         {weather && (
           <div className="container">
             <div className="section section__inputs">
-             <div className="input">
-             <input type="text" name="city" placeholder="Enter City..." />
-             <button className="">Search</button>
-             </div>
+            
+             <input type="text" name="city" placeholder="Enter City..." onChange = {handleChange}/>
+            
+            
               <button onClick={(e)=>handleUnitChange(e)}>°F</button>
             </div>
 
