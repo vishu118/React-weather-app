@@ -5,16 +5,12 @@ import "./index.css";
 
 const App = () => {
   return (
-    <div className="app" style={{ backgroundImage: `url(hotbg)` }}>
+    <div className="app" style={{ backgroundImage:`url(${hotbg})`  }}>
       <div className="overlay">
         <div className="container">
           <div className="section section__inputs">
-            <input
-              type="text"
-              name="city"
-              placeholder="Enter City..."
-            />
-            <button >°F</button>
+            <input type="text" name="city" placeholder="Enter City..." />
+            <button>°F</button>
           </div>
 
           <div className="section section__temperature">
@@ -29,7 +25,6 @@ const App = () => {
           </div>
 
           {/* bottom description */}
-        
         </div>
       </div>
     </div>
