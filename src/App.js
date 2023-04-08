@@ -19,15 +19,19 @@ const App = () => {
   }, [units]);
 
 
-const handleUnitChange = (e)=>{
-const button = e.currentTarget.innerText;
-const celcius = button === "°C"
+ const handleUnitChange = (e)=>{
+    const button = e.currentTarget;
+    const currentUnit = button.innerText.slice(1);
+
+    const isCelsius = currentUnit === "C";
+    button.innerText = isCelsius ? "°F" : "°C";
+    setunits(isCelsius ? "metric" : "imperial");
 
 
 
 }
 
-  }
+  
 
   return (
     <div className="app" style={{ backgroundImage: `url(${hotbg})` }}>
