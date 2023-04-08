@@ -16,7 +16,7 @@ const App = () => {
     };
 
     fetchData();
-  }, []);
+  }, [units]);
 
   return (
     <div className="app" style={{ backgroundImage: `url(${hotbg})` }}>
