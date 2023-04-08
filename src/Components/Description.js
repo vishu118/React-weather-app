@@ -54,7 +54,7 @@ const Description = ({ units, setunits, weather }) => {
     },
   ];
   return (
-    <div className="section section__descriptions">
+    <div className="section-discreption section__descriptions">
       {cards.map((ele) => {
        return(
         <div className="card" key={ele.id}>

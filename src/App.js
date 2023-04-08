@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Description from "./Components/Description";
-import hotbg from "./Assets/hot.jpg";
+import bg from "./Assets/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass.jpg";
 // import coldbg from "./Assets/cold.jpg";
 import "./index.css";
 import { getData } from "./Components/Data";
@@ -45,7 +45,7 @@ const handleChange = (e)=>{
   
 
   return (
-    <div className="app" style={{ backgroundImage: `url(${hotbg})` }}>
+    <div className="app" style={{ backgroundImage: `url(${bg})` }}>
       <div className="overlay">
         {weather && (
           <div className="container">
