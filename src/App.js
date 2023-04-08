@@ -7,7 +7,7 @@ import { getData } from "./Components/Data";
 
 const App = () => {
   const [weather, setWeather] = useState(null);
-  const [units,setunits] = useState('metric')
+  const [units, setunits] = useState("metric");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,6 +18,17 @@ const App = () => {
     fetchData();
   }, [units]);
 
+
+const handleUnitChange = (e)=>{
+const button = e.currentTarget.innerText;
+const celcius = button === "°C"
+
+
+
+}
+
+  }
+
   return (
     <div className="app" style={{ backgroundImage: `url(${hotbg})` }}>
       <div className="overlay">
@@ -25,7 +36,7 @@ const App = () => {
           <div className="container">
             <div className="section section__inputs">
               <input type="text" name="city" placeholder="Enter City..." />
-              <button>°F</button>
+              <button onClick={(e)=>handleUnitChange(e)}>°F</button>
             </div>
 
             <div className="section section__temperature">
@@ -42,10 +53,7 @@ const App = () => {
             </div>
 
             {/* bottom description */}
-            <Description  weather = {weather}
-                          units = {units}
-                          setunits = {units}
-            />
+            <Description weather={weather} units={units} setunits={units} />
           </div>
         )}
       </div>
