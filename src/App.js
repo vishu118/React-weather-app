@@ -9,7 +9,12 @@ const App = () => {
 
 
   useEffect(()=>{
-   const data =  getData('ranchi')
+   const fetchData = async()=>{
+    const data = await getData('ranchi')
+    console.log(data)
+   }
+
+   fetchData()
   },[])  
 
 
